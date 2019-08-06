@@ -2,26 +2,37 @@
 body
 {
         background-color: #ebeef0;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .navbar-fixed-top
 {
-    background-color: #fff;
+    background: #fff;
     margin: 0!important;
     position: fixed;
+    top: 0;
+    left: 64px;
     right: 0;
     z-index: 2;
+    font-family: 'Nunito', sans-serif;
     border-bottom: 1px solid #dadfe3;
     border-top: none;
-    height: 53px;
-       font-family: 'Nunito', sans-serif;
-    margin:
-        padding: 5px 0 ;
+    height: 51px;
 }
 .logo
 {
     padding: 9px 0;
     border-bottom: 1px solid #333;
     cursor: pointer;
+}
+.preview
+{
+    border: 1.5px dashed #cfcfcf;
+    padding:5px 15px;
+    background-color:#ffffff;
+}
+.preview h3{
+    text-align:center !important;
 }
 .shape {
     display: block;
@@ -31,7 +42,7 @@ body
 }
 .navbar-brand
 {
-font-size:28px;
+font-size:22px;
     font-weight:700;
 }
 .navbar-brand span
@@ -42,7 +53,7 @@ font-size:28px;
 .navbar-nav>li>a
 {
   font-weight:600;
-font-size:18px;
+font-size:16px;
     padding:15px 25px;
     padding
 }
@@ -76,10 +87,60 @@ ul#pro li a
 ul#pro li a:hover{
     color:#00c97d;
 }
+
+#sidebar i {
+    font-size: 25px;
+    color: #fff;
+    padding: 5px;
+    vertical-align: middle;
+    line-height: 38px;
+}
+.container2
+{
+    margin-left:10%;
+    margin-right:15%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+   
+}
+
+.dropdown-content {
+     top: 48px;
+    left: 0;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    animation-timing-function: ease-out;
+  display: none;
+    float: left;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: max-content;
+  overflow: auto;
+    border: 1px solid rgba(0,0,0,.15);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
 .dropdown-menu
 {
    transition: transform .3s,width .3s,height .3s,-webkit-transform .3s;
     width:100%;
+    min-width: 100px;
     padding:10px;
     box-shadow: 0 0 50px rgba(0,0,0,.10);
 }
@@ -96,7 +157,7 @@ ul#pro li a:hover{
 ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
  z-index: 300;
-    left: 0%;
+    left: -10%;
     top: 50px;
     margin-left:60px;
     border:none;
@@ -115,7 +176,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     border: 7px solid transparent;
     border-bottom: 7px solid #fff;
     top: -14px;
-    left: 50%;
+    left: 60%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
@@ -128,14 +189,14 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     border: 7px solid transparent;
     border-bottom: 7px solid #fff;
     top: -14px;
-    left: 50%;
+    left: 60%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 .buttonadd {
   background-color:#00c97d; 
   border: none;
-    margin-top:8px;
+   margin-top:8px;
   color: white;
   padding: 5px 10px;
   text-align: center;
@@ -144,6 +205,21 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   font-size: 17px;
     font-weight:700;
 }
+.right
+{
+    float:right;
+}
+.buttonnew {
+  background: #00c97d;
+    color: #fff!important;
+    border: 1px solid #00c97d;
+    padding: 5px 10px;
+    border-radius:3px;
+    line-height: 13px;
+    margin-left: 10px;
+    margin-top: 12px;
+    -webkit-font-smoothing: initial!important;
+}
 .buttonedit
 {
 padding:2px 10px; 
@@ -151,14 +227,22 @@ padding:2px 10px;
     border: 1px solid #00c97d; 
 }
 .tooltip-inner {
-    min-width: 80px;
-    padding: 5px 8px;
+    min-width: max-content;
+    width:100% !important;
+    padding: 5px 5px;
     color: #fff;
+    margin-left:-8px;
     font-size:14px;
      font-family: 'Nunito', sans-serif;
-    text-align: center;
     background-color: #000;
     border-radius: 4px;
+}
+.tooltip.right .tooltip-arrow {
+    top: 50%;
+    left: -10%;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #000;
 }
 #sidebar {
     background: #382e28 ;
@@ -173,13 +257,35 @@ padding:2px 10px;
 {
     text-align: center;
     position: relative !important;
-    padding:20px 0px;
-    margin: 16px 0;
+    margin: 20px 0;
     margin-left:-40px;
 }
+#sidebar .icons {
+    font-size: 20px;
+    color: #e6e6e6;
+    border-radius:2px;
+    padding:0px 10px;
+    display: inline-block;
+}
+.icons:hover
+{
+    background-color: #48413e;
+    padding:5px 10px;
+}
+#sidebar .sidebar-menu li active, #sidebar .sidebar-menu li.active .icons {
+    background-color: #00c97d;
+    padding:0px 10px;
+}
+
 .sidebar-menu ul li:first-child
 {
-    padding-top:20px;
+    padding-top:10px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
 }
 .main
 {
@@ -191,25 +297,101 @@ padding:2px 10px;
     top: 51px;
     overflow: auto;
     background-color: #ebeef0;
+     font-family: 'Nunito', sans-serif;  
     min-width: 800px;
 }
-
-.tab-content
+.sitesdiv, .stockdiv, .companydiv, .employeediv
 {
-      font-family: 'Nunito', sans-serif;
-    
+   margin-top:50px;
+    margin-left:100px;
+    padding:20px;
+    width:100%;
+    right: 0;
+    bottom: 0;
+    top: 51px;
+    overflow: auto;
+    background-color: #ebeef0;
+     font-family: 'Nunito', sans-serif;  
+    min-width: 800px;
 }
-.tab-content h3
+.site-card, .stock-card {
+    background-color: #fff;
+    border-radius: 0px;
+    padding:20px 20px;
+    margin-top:10px;
+     width:100%;
+    position: relative;
+    box-shadow: 0 1px 2px 1px rgba(24,24,24,.02);
+    cursor: pointer;
+}
+.spancolor
 {
+    color:#ff0000;
+}
+.medimage
+{
+    max-width:400px;
+    max-height:200px;
+    width:100% !important;
+}
+.site-card h3, .stock-card h3{
+    font-weight:800;
+    text-align: center;
+    font-size:22px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.5px;
+}
+.employeediv h3
+{
+     font-weight:800;
+    text-align: left;
+    font-size:22px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.5px;
+}
+.site-card p, .stock-card p{
+    font-weight:500;
+    text-align: center;
+    font-size:16px;
+   font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.5px;
+}
+.stock-card p span {
+    font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+    color: red;
+}
+.preview p{
+    font-weight:600;
+    text-align: left;
+    padding:10px 0px;
+    font-size:16px;
+   font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.5px;
+}
+.fa-plus-square {
+    float: center !important;
+    font-size: 50px !important;
+    color: #00c97d;
+    padding-top: 29%;
+    padding-left: 43%;
+}
+.main h3
+{
+  font-family: 'Nunito', sans-serif;  
     font-weight:700;
     font-size:26px;
 }
-.tab-content p
+.main p
 {
     font-size:16px;
+    color: rgba(0,0,0,.54);
 }
-input[type=text], input[type=email], input[type=password] {
-    width: 40%;
+input[type=text], input[type=email], input[type=password], input[type=number]  {
+    width: 80%;
     padding: 12px 20px;
     min-height: 45px;
     margin: 8px 0;
@@ -229,8 +411,72 @@ input[type=text], input[type=email], input[type=password] {
     outline: none;
     font-family: 'Nunito', sans-serif;
 }
-
-
+.selectit {
+    width: 80%;
+    min-height: 45px;
+    padding: 12px 20px;
+    margin: 8px 0;
+   font-family: 'Nunito', sans-serif;
+ border: 1px solid #DBDFE3;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+.textarea {
+    width: 80%;
+    padding: 12px 20px;
+    min-height: 45px;
+    margin: 8px 0;
+    min-height: 100px;
+    color: #000000;
+    border: 1px solid #DBDFE3;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+.full
+{
+    width:80%;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+   margin-top:10px;
+    font-size:13px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+.top
+{
+    margin-top:20px;
+}
+.newcard {
+    margin-top:10px;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 25px;
+    position: relative;
+    border:1px solid #cfcfcf;
+    box-shadow: 0 1px 2px 1px rgba(24,24,24,.02);
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.newcard h4
+{
+ font-family: 'Nunito', sans-serif;   
+ font-size:20px;
+     letter-spacing: 0.2px;   
+    margin: 0;
+    font-weight: 700;
+    line-height: 25px;
+}
+.newcard p
+{
+    font-size:12px;
+    color: rgba(0,0,0,.54);
+}
+.newcard h4:hover
+{
+   color:#00c97d; 
+}
 <!--datatables-->
 .table
 {
